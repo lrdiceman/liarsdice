@@ -2,11 +2,14 @@
 from random import random
 
 nplayers = 0
-while 0 <= nplayers <= 2:
+while nplayers <= 2:
     try:
         nplayers = int(input('Number of players: '))
-    except:
-        pass
+    except ValueError:
+        print('Integer number expected. Press Control-C to exit')
+    except KeyboardInterrupt:
+        print('Bye')
+        exit()
 
 # nplayers = 3
 human_i = -2
